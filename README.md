@@ -1,9 +1,9 @@
-# Customer.io Node Client
+#Customer.io Node Client
 
 Clean and simple NodeJS wrapper for the Customer.io [REST API](http://customer.io/docs/api/rest.html). 
 Designed specifically to be as similar as possible to the main Customer.io JavaScript client.
 
-## Example
+##Example
 
 ```js
 var customer = require('customerio');
@@ -28,7 +28,7 @@ customer.track('123', 'bought ping pong paddle', {
 
 ***
 
-## Methods
+##Methods
 
 ### init(siteId, apiKey)
 
@@ -38,7 +38,7 @@ Set up the the module to work with your account by inputting your `siteId` and `
 customer.init('your_site_id', 'your_api_key');
 ```
 
-### identify(properties)
+###identify(properties)
 
 Create/update a user in Customer.io, passing any properties. Note: JavaScript dates are automatically converted 
 to UNIX to comply with Customer.io's standard of timestamp policy.
@@ -58,9 +58,19 @@ customer.identify({
 });
 ```
 
-### remove(customerId)
+###remove(customerId)
 
-### track(customerId, eventName, properties)
+Removes a customer by id.
+
+```js
+customer.remove("547243166e8e449111f866bb").done(function () {
+  console.log("done");
+}, function (err) {
+  console.log(err);
+});
+```
+
+###track(customerId, eventName, properties)
 
 Track an event for a given customer. `properties` are optional. Note: JavaScript dates are automatically converted 
 to UNIX to comply with Customer.io's standard of timestamp policy.
@@ -69,12 +79,12 @@ to UNIX to comply with Customer.io's standard of timestamp policy.
 customer.track("123", "installed an epic app").done(function () {
   console.log("done");
 }, function (err) {
-  console.log(err);
+  console.log("oh no", err);
 });
 ```
 
 ***
 
-## Licence
+##Licence
 
 Released under the MIT license. See file called [LICENCE](LICENCE) for more details.
