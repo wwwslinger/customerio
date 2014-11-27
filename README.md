@@ -98,10 +98,12 @@ customer.track('123', 'installed an epic app').done(function () {
 
 ***
 
-##Why was this library built
+##Why was this library built?
 
-There is a [recommended library](https://github.com/liamdon/node-customer.io) which throws errors all over the place.
+There is a [recommended library](https://github.com/liamdon/node-customer.io) which throws errors.
 Throwing errors is bad. Plus, [When.js](https://github.com/cujojs/when) promises are the shizz for handling async flow.
+
+Oh, and Customer.io is awesome, obviously! 
 
 ***
 
