@@ -3,10 +3,16 @@
 Clean and simple NodeJS wrapper for the Customer.io [REST API](http://customer.io/docs/api/rest.html). 
 Designed specifically to be as similar as possible to the main Customer.io [JavaScript client](http://customer.io/docs/javascript-quick-start.html).
 
+##Installation
+
+```
+npm install node-customerio --save
+```
+
 ##Example
 
 ```js
-var customer = require('customerio');
+var customer = require('node-customerio');
 
 // Configure the module to your account
 customer.init('your_site_id', 'your_api_key');
@@ -49,14 +55,14 @@ Returns a [When-style](https://github.com/cujojs/when) promise.
 
 ```js
 customer.identify({
-  id: "123",
-  email: "chris@test.com",
+  id: '123',
+  email: 'chris@test.com',
   created_at: 1416774422, // can use JavaScript date here
-  steven: "smith"
+  steven: 'smith'
 }).done(function (result) {
-  console.log("done");
+  console.log('done');
 }, function (err) {
-  console.log("oh noes!", err);
+  console.log('oh noes!', err);
 });
 ```
 
@@ -67,8 +73,8 @@ Removes a customer by id.
 Returns a [When-style](https://github.com/cujojs/when) promise.
 
 ```js
-customer.remove("547243166e8e449111f866bb").done(function () {
-  console.log("done");
+customer.remove('547243166e8e449111f866bb').done(function () {
+  console.log('done');
 }, function (err) {
   console.log(err);
 });
@@ -83,12 +89,19 @@ Note: JavaScript dates are automatically converted to UNIX to comply with Custom
 Returns a [When-style](https://github.com/cujojs/when) promise.
 
 ```js
-customer.track("123", "installed an epic app").done(function () {
-  console.log("done");
+customer.track('123', 'installed an epic app').done(function () {
+  console.log('done');
 }, function (err) {
-  console.log("oh no", err);
+  console.log('oh no', err);
 });
 ```
+
+***
+
+##Why was this library built
+
+There is a [recommended library](https://github.com/liamdon/node-customer.io) which throws errors all over the place.
+Throwing errors is bad. Plus, [When.js](https://github.com/cujojs/when) promises are the shizz for handling async flow.
 
 ***
 
