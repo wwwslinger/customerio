@@ -41,8 +41,9 @@ customer.init('your_site_id', 'your_api_key');
 
 ###customer.identify(properties)
 
-Create/update a user in Customer.io, passing any properties. Note: JavaScript dates are automatically converted 
-to UNIX to comply with Customer.io's standard of timestamp policy.
+Create/update a user in Customer.io, passing any properties. 
+
+Note: JavaScript dates are automatically converted to UNIX to comply with Customer.io's standard of timestamp policy.
 
 Returns a [When-style](https://github.com/cujojs/when) promise.
 
@@ -50,7 +51,7 @@ Returns a [When-style](https://github.com/cujojs/when) promise.
 customer.identify({
   id: "123",
   email: "chris@test.com",
-  created_at: 1416774422,
+  created_at: 1416774422, // can use JavaScript date here
   steven: "smith"
 }).done(function (result) {
   console.log("done");
@@ -61,7 +62,9 @@ customer.identify({
 
 ###customer.remove(customerId)
 
-Removes a customer by id.
+Removes a customer by id. 
+
+Returns a [When-style](https://github.com/cujojs/when) promise.
 
 ```js
 customer.remove("547243166e8e449111f866bb").done(function () {
@@ -73,8 +76,11 @@ customer.remove("547243166e8e449111f866bb").done(function () {
 
 ###customer.track(customerId, eventName, properties)
 
-Track an event for a given customer. `properties` are optional. Note: JavaScript dates are automatically converted 
-to UNIX to comply with Customer.io's standard of timestamp policy.
+Track an event for a given customer. `properties` are optional. 
+
+Note: JavaScript dates are automatically converted to UNIX to comply with Customer.io's standard of timestamp policy.
+
+Returns a [When-style](https://github.com/cujojs/when) promise.
 
 ```js
 customer.track("123", "installed an epic app").done(function () {
