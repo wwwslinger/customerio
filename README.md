@@ -1,7 +1,7 @@
 #Customer.io Node Client
 
 Clean and simple NodeJS wrapper for the Customer.io [REST API](http://customer.io/docs/api/rest.html). 
-Designed specifically to be as similar as possible to the main Customer.io JavaScript client.
+Designed specifically to be as similar as possible to the main Customer.io [JavaScript client](http://customer.io/docs/javascript-quick-start.html).
 
 ##Example
 
