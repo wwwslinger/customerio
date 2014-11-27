@@ -31,7 +31,7 @@ customer.track('123', 'bought ping pong paddle', {
 
 ##Methods
 
-### init(siteId, apiKey)
+###customer.init(siteId, apiKey)
 
 Set up the the module to work with your account by inputting your `siteId` and `apiKey`.
 
@@ -39,7 +39,7 @@ Set up the the module to work with your account by inputting your `siteId` and `
 customer.init('your_site_id', 'your_api_key');
 ```
 
-###identify(properties)
+###customer.identify(properties)
 
 Create/update a user in Customer.io, passing any properties. Note: JavaScript dates are automatically converted 
 to UNIX to comply with Customer.io's standard of timestamp policy.
@@ -59,7 +59,7 @@ customer.identify({
 });
 ```
 
-###remove(customerId)
+###customer.remove(customerId)
 
 Removes a customer by id.
 
@@ -71,7 +71,7 @@ customer.remove("547243166e8e449111f866bb").done(function () {
 });
 ```
 
-###track(customerId, eventName, properties)
+###customer.track(customerId, eventName, properties)
 
 Track an event for a given customer. `properties` are optional. Note: JavaScript dates are automatically converted 
 to UNIX to comply with Customer.io's standard of timestamp policy.
