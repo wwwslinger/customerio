@@ -24,7 +24,8 @@ customer.delete('123');
 // Track an event for a user
 customer.track('123', 'bought ping pong paddle', {
   color: 'red'
-})
+});
+```
 
 ***
 
