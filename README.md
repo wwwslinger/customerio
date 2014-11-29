@@ -28,7 +28,7 @@ customer.identify({
 customer.delete('123');
 
 // Track an event for a user
-customer.track('123', 'bought ping pong paddle', {
+customer.track('123', 'boughtPingPongPaddle', {
   color: 'red'
 });
 ```
@@ -89,7 +89,7 @@ Note: JavaScript dates are automatically converted to UNIX to comply with Custom
 Returns a [When-style](https://github.com/cujojs/when) promise.
 
 ```js
-customer.track('123', 'installed an epic app').done(function () {
+customer.track('123', 'boughtPingPongPaddle', { color: "red" }).done(function () {
   console.log('done');
 }, function (err) {
   console.log('oh no', err);
