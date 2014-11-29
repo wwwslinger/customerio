@@ -21,7 +21,7 @@ customer.init('your_site_id', 'your_api_key');
 customer.identify({
   id: '123',
   email: 'billy@jean.com',
-  created_at: 1416774422
+  created_at: new Date(2014, 09, 24) // can also pass UNIX timestamp here
 });
 
 // Delete a user
@@ -57,7 +57,7 @@ Returns a [When-style](https://github.com/cujojs/when) promise.
 customer.identify({
   id: '123',
   email: 'chris@test.com',
-  created_at: 1416774422, // can use JavaScript date here
+  created_at: new Date(2014, 09, 24), // can also pass UNIX timestamp here
   steven: 'smith'
 }).done(function (result) {
   console.log('done');
